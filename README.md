@@ -305,7 +305,8 @@ GAN has been proven to be effective at generating fake images and image style tr
 ![img](https://latex.codecogs.com/png.latex?%5Cinline%20%5Csigma_%7Bt&plus;1%7D%3Dg%28Z_%7Bt&plus;1%7D%2CS_t%29%2Ct%20%5Cin%20%5Cmathbb%7BN%7D_%7B0%7D)
 
 ##### Define the architecture
-The architecture of GAN we used is very similar to the one from https://github.com/eriklindernoren/PyTorch-GAN. 
+The architecture of GAN we used is very similar to the one from https://github.com/eriklindernoren/PyTorch-GAN. Both the generator and the discriminator recieve the input DLV with size of 3*8 = 24. The last layer of the generator is a tanh activation layer, which we will talk about in the next section while the one for the discriminator is sigmoid, which maps the values from linear layer to the range from 0 to 1.
+
 ```python
 Generator(
   (model): Sequential(
