@@ -374,11 +374,11 @@ where dp, r, and rl are the path to the starting DLV, if you want to test the mo
 #!./src
 python ./Project.py --mode=Test --dlv_path='data/spxw_call_dlv_0.csv' --recursive=True --recursive_length=10
 ```
-This will test the model starting with DLV of Jan 1st, 2020 and you should expect there are 10 results generated, which represents the simulated DLVs from Jan 2nd, 2020 to Jan 11th, 2020.
+This will test the model starting with DLV of Jan 1st, 2020 and you should expect there are 10 results generated, which represent the simulated DLVs from Jan 2nd, 2020 to Jan 11th, 2020.
 
 
 ### **Results and Evaluation**
-
+The performance of the model is evaluated by three metrics: CEPDF (Cumulative Empirical Probability Density Function), Skew, and Kurtosis.
 ### Drawback/Challenge
 
 ### Future Study
