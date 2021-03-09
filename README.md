@@ -338,6 +338,9 @@ Discriminator(
 )
 ```
 
+##### Normalize the Data
+As for training purpose, we want to normalize the data before fitting to the model. Specific reason can be found here: https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network.
+
 
 ### **Results and Evaluation**
 
