@@ -337,7 +337,7 @@ Discriminator(
 
 ##### Normalize the Data
 As for training purpose, we want to normalize the data before fitting to the model. Specific reason can be found here: https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network. However, our data is not normaly distributed, which can be seen from the histogram below, and thus we use Z-score normalization. 
-![img](https://drive.google.com/drive/u/1/folders/1aUJR-VLKSuvmKGZj_q6k8ZUGKm-GPzlo)
+![img](https://drive.google.com/drive/u/1/folders/1aUJR-VLKSuvmKGZj_q6k8ZUGKm-GPzlo/1.png)
 
 As mentioned in the previous section, we use tanh as our last layer for the generator. This is because as we normalize the input from -1 to 1, we will also want the output from the model in this range. The max&min normalization is used for this purpose. The normalization functions we used are:
 ```python
@@ -349,11 +349,14 @@ def Z_Score_NormalizeData(data):
     std = np.std(data)
     return (data - mean)/std
 ```
+
+### Train and Test the model
+
 ### **Results and Evaluation**
 
 ### Drawback/Challenge
 
 ### Future Study
 
-### Reference
+
 
