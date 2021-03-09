@@ -291,12 +291,12 @@ GAN refers to Generative Adversarial Networks, which has two sets of networks: t
 ![img](https://latex.codecogs.com/gif.latex?min_%7BG%7Dmax_%7BD%7DV%28D%2CG%29%20%3D%20%5Cmathbb%7BE%7D_%7B_%7Bx%7D%7D%5Blog%28D%28x%29%29%5D%20&plus;%20%5Cmathbb%7BE%7D_%7B_%7Bz%7D%7D%5Blog%281%20-%20D%28G%28z%29%29%29%5D)
 
 where:
-![img](https://latex.codecogs.com/gif.latex?D%28x%29) is the discriminator's estimate of the probability that real data instance x is from real domain.
-![img](https://latex.codecogs.com/gif.latex?E_%7Bx%7D) is the expected value over all real data instances.
-![img](https://latex.codecogs.com/gif.latex?G%28z%29) is the generator-generated result.
-![img](https://latex.codecogs.com/gif.latex?D%28G%28z%29%29) is the discriminator's estimate of the probability that a fake instance is real.
-![img](https://latex.codecogs.com/gif.latex?E_%7Bz%7D) is the expected value over all random inputs to the generator 
-The loss functions for both networks are the same except that we want to minimize it for generater and vice versa for discriminator.
+![img](https://latex.codecogs.com/gif.latex?D%28x%29) is the discriminator's estimate of the probability that real data instance x is from real domain,
+![img](https://latex.codecogs.com/gif.latex?E_%7Bx%7D) is the expected value over all real data instances,
+![img](https://latex.codecogs.com/gif.latex?G%28z%29) is the generator-generated result,
+![img](https://latex.codecogs.com/gif.latex?D%28G%28z%29%29) is the discriminator's estimate of the probability that a fake instance is real, and
+![img](https://latex.codecogs.com/gif.latex?E_%7Bz%7D) is the expected value over all random inputs to the generator.
+The loss functions for both networks are the same except that we want to minimize it for generater and vice versa for discriminator. This is where the term "advsersarial" comes from.
 
 
 
