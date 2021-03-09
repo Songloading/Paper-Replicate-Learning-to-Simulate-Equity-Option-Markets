@@ -351,6 +351,11 @@ def Z_Score_NormalizeData(data):
 ```
 
 ### Train and Test the model
+- Train a model:
+```shellscript
+#!./src
+python ./Project.py --mode=Train --num_epochs=np --batch_size=bs --learning_rate=lr --save_model=sm
+```
 
 ### **Results and Evaluation**
 
