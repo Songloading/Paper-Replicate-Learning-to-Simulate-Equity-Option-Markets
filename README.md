@@ -356,6 +356,25 @@ def Z_Score_NormalizeData(data):
 #!./src
 python ./Project.py --mode=Train --num_epochs=np --batch_size=bs --learning_rate=lr --save_model=sm
 ```
+where you should replace np, bs, lr, and sm by your choice. e.g:
+```shellscript
+#!./src
+python ./Project.py --mode=Train --num_epochs=100 --batch_size=3 --learning_rate=3e-4 --save_model=True
+```
+If the save_model argument is true, the parameters of your generator should be saved to the model folder. We strongly recommend to set the batch size less than 5 because of the limit of data.
+
+- Test a model:
+```shellscript
+#!./src
+python ./Project.py --mode=Test --dlv_path=dp --recursive=r --recursive_length=rl
+```
+where dp, r, and rl are the path to the starting DLV, if you want to test the model recursively (other wise it only generate one single result), and how many steps you want to test the model. e.g:
+```shellscript
+#!./src
+python ./Project.py --mode=Test --dlv_path='data/spxw_call_dlv_0.csv' --recursive=True --recursive_length=10
+```
+This will test the model starting with DLV of Jan 1st, 2020 and you should expect there are 10 results generated, which represents the simulated DLVs from Jan 2nd, 2020 to Jan 11th, 2020.
+
 
 ### **Results and Evaluation**
 
