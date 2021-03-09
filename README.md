@@ -409,7 +409,7 @@ The performance of the model is evaluated by three metrics: CEPDF (Cumulative Em
 #!./src
 python ./metrics.py
 ```
-Please ensure that the number of files in **result** folder is greater than 10 and also please include only the csv files you want to test in the **result** folder.
+Note: Please ensure that the number of files in **result** folder is greater than 10 and also please include only the csv files you want to test in the **result** folder.
 ### Existing Problem
 
 
