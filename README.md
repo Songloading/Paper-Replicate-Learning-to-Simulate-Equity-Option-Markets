@@ -297,13 +297,14 @@ where:
 ![img](https://latex.codecogs.com/gif.latex?G%28z%29) is the generator-generated result,
 ![img](https://latex.codecogs.com/gif.latex?D%28G%28z%29%29) is the discriminator's estimate of the probability that a fake instance is real, and
 ![img](https://latex.codecogs.com/gif.latex?E_%7Bz%7D) is the expected value over all random inputs to the generator.
-The loss functions for both networks are the same except that we want to minimize it for generater and vice versa for discriminator. This is where the term "advsersarial" comes from.
+The loss functions for both networks are the same except that we want to minimize it for generater and vice versa for discriminator. This is where the term "advsersarial" comes from. 
 
 
 
-It has been proven to be effective at generating fake images and image style transfering. In our case, we are going to use GAN to generate simulated DLVs based on the real DLVs, i.e 
+GAN has been proven to be effective at generating fake images and image style transfering. In our case, we are going to use GAN to generate simulated DLVs based on the real DLVs, i.e 
 ![img](https://latex.codecogs.com/png.latex?%5Cinline%20%5Csigma_%7Bt&plus;1%7D%3Dg%28Z_%7Bt&plus;1%7D%2CS_t%29%2Ct%20%5Cin%20%5Cmathbb%7BN%7D_%7B0%7D)
 
+##### Define the architecture
 
 
 
