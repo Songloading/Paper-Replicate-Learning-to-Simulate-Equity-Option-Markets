@@ -286,7 +286,13 @@ The optimal outcome is to approximate a parameter vector ![img](https://latex.co
 
 
 ##### Overview of GAN
-GAN refers to Generative Adversarial Networks, which has two sets of networks: the generator and the discriminator. It has been proven to be effective at generating fake images and image style transfering. In our case, we are going to use GAN to generate simulated DLVs based on the real DLVs, i.e
+GAN refers to Generative Adversarial Networks, which has two sets of networks: the generator and the discriminator. The  ![img] (https://latex.codecogs.com/gif.latex?min_%7BG%7Dmax_%7BD%7DV%28D%2CG%29%20%3D%20%5Cmathbb%7BE%7D_%7B_%7Bx%7D%7D%5Blog%28D%28x%29%29%5D%20&plus;%20%5Cmathbb%7BE%7D_%7B_%7Bz%7D%7D%5Blog%281%20-%20D%28G%28z%29%29%29%5D)
+
+It has been proven to be effective at generating fake images and image style transfering. In our case, we are going to use GAN to generate simulated DLVs based on the real DLVs, i.e 
+![img](https://latex.codecogs.com/png.latex?%5Cinline%20%5Csigma_%7Bt&plus;1%7D%3Dg%28Z_%7Bt&plus;1%7D%2CS_t%29%2Ct%20%5Cin%20%5Cmathbb%7BN%7D_%7B0%7D)
+
+
+
 
 ### **Results and Evaluation**
 
