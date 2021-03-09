@@ -393,7 +393,16 @@ The performance of the model is evaluated by three metrics: CEPDF (Cumulative Em
 	
 - Skew & Kurtosis:
   Skew and Kurtosis are measurements of the asymmetry and the flatness of the probability distribution. In financial applications higher order moments such as the skewness and kurtosis are of interest as they determine the propensity to generate extremal values.
+  For calculation, we simply find the Skew and Kurtosis for both the simulated and the real distributions, and subtract them:
   
+  ![img](https://latex.codecogs.com/gif.latex?%5Cfrac%7B1%7D%7BN%7D%5Csum%20%5Cleft%20%5C%7C%20Skew%28a_%7Bh%7D%29%20-%20Skew%28a_%7Bg%7D%29%20%5Cright%20%5C%7C)
+  
+  and similarly:
+  
+  ![img](https://latex.codecogs.com/gif.latex?%5Cfrac%7B1%7D%7BN%7D%5Csum%20%5Cleft%20%5C%7C%20Kurtosis%28a_%7Bh%7D%29%20-%20Kurtosis%28a_%7Bg%7D%29%20%5Cright%20%5C%7C)
+  
+  where:
+  ![img](https://latex.codecogs.com/gif.latex?a_%7Bh%7D) and ![img](https://latex.codecogs.com/gif.latex?a_%7Bg%7D) are the real and simulated DLVs.
 
 - Evaluate:
 ```shellscript
