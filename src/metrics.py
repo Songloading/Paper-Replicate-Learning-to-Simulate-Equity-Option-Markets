@@ -12,8 +12,8 @@ def find(pattern, path):
             if fnmatch.fnmatch(name, pattern):
                 result.append(os.path.join(root, name))
     return result
-s = find('*.csv','E:/Northwestern/COMP_SCI 496 Adv Deep Learning/data/')
-r = find('*.csv','E:/Northwestern/COMP_SCI 496 Adv Deep Learning/result/')
+s = find('*.csv','data/')
+r = find('*.csv','result/')
 
 def compare_epdf(a, b):
     ecdfa = ECDF(a)
