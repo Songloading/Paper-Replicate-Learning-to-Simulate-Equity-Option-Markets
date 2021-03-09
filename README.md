@@ -380,13 +380,18 @@ This will test the model starting with DLV of Jan 1st, 2020 and you should expec
 The performance of the model is evaluated by three metrics: CEPDF (Cumulative Empirical Probability Density Function), Skew, and Kurtosis.
 - CEPDF:
    Since we want our simulated results to match the real data, the Empirical Probability Density Function can be used for examing the distributional properties. Due to the 	random extreme values in the real dataset, we bining the time series data such that each bin contains only 5 DLVs. Then calculate the EPDF for both simulated and real 	 bins. The result is calculated by suming the differences between each bin.
+   Let ![img](https://latex.codecogs.com/gif.latex?%5Cbeta%20_%7Bh%7D%20%3D%20%5B%7B%5Cbeta%20_%7B1%7D%2C...%5Cbeta%20_%7BK%7D%7D%5D) be the bins
+   Thus we can find the empirical probability density function for each bin:
+   ![img](https://latex.codecogs.com/gif.latex?%5Ctilde%7Bf_%7Bh%7D%7D%3A%5Cbeta%20_%7Bh%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D_%7B%5Cgeq%200%7D)
+   ![img](https://latex.codecogs.com/gif.latex?%5Ctilde%7Bf_%7Bg%7D%7D%3A%5Cbeta%20_%7Bh%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D_%7B%5Cgeq%200%7D)
+   
+   Then we can calculate the cumulative difference:
+   
 	
-- Skew:
-  Skew is a measure of the asymmetry of the probability distribution. By examine the skew, we could see the difference of assymetry between the simulated and the real distributions.
+- Skew & Kurtosis:
+  Skew and Kurtosis are measurements of the asymmetry and the flatness of the probability distribution. In financial applications higher order moments such as the skewness and kurtosis are of interest as they determine the propensity to generate extremal values.
   
-- Kurtosis:
-  Kurtosis is a measure of the flatness of the probability distribution. By examine the kurtosis, we could see the difference of flatness between the simulated and the real distributions.
-  
+
 - Evaluate:
 ```shellscript
 #!./src
