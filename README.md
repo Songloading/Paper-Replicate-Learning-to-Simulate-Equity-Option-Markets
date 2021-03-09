@@ -305,38 +305,36 @@ GAN has been proven to be effective at generating fake images and image style tr
 ![img](https://latex.codecogs.com/png.latex?%5Cinline%20%5Csigma_%7Bt&plus;1%7D%3Dg%28Z_%7Bt&plus;1%7D%2CS_t%29%2Ct%20%5Cin%20%5Cmathbb%7BN%7D_%7B0%7D)
 
 ##### Define the architecture
+The architecture of GAN we used is very similar to the one from https://github.com/eriklindernoren/PyTorch-GAN. 
 ```python
-class Discriminator(nn.Module):
-    def __init__(self, input_size):
-        super(Discriminator, self).__init__()
+Generator(
+  (model): Sequential(
+    (0): Linear(in_features=24, out_features=128, bias=True)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Linear(in_features=128, out_features=256, bias=True)
+    (3): BatchNorm1d(256, eps=0.8, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Linear(in_features=256, out_features=512, bias=True)
+    (6): BatchNorm1d(512, eps=0.8, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Linear(in_features=512, out_features=1024, bias=True)
+    (9): BatchNorm1d(1024, eps=0.8, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Linear(in_features=1024, out_features=24, bias=True)
+    (12): Tanh()
+  )
+)
 
-        self.model = nn.Sequential(
-            nn.Linear(int(np.prod(input_size)), 512),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Linear(512, 256),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Linear(256, 1),
-            nn.Sigmoid(),
-        )
-
-class Generator(nn.Module):
-    def __init__(self, input_size):
-        super().__init__()
-        def block(in_feat, out_feat, normalize=True):
-            layers = [nn.Linear(in_feat, out_feat)]
-            if normalize:
-                normlayer = nn.BatchNorm1d(out_feat, 0.8)
-                layers.append(normlayer)
-            layers.append(nn.LeakyReLU(0.2, inplace=True))
-            return layers
-        self.model = nn.Sequential(
-            *block(input_size, 128, normalize=False),
-            *block(128, 256),
-            *block(256, 512),
-            *block(512, 1024),
-            nn.Linear(1024, int(np.prod(input_size))),
-            nn.Tanh()
-        )
+Discriminator(
+  (model): Sequential(
+    (0): Linear(in_features=24, out_features=512, bias=True)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): LeakyReLU(negative_slope=0.2, inplace=True)
+    (4): Linear(in_features=256, out_features=1, bias=True)
+    (5): Sigmoid()
+  )
+)
 ```
 
 
@@ -345,3 +343,6 @@ class Generator(nn.Module):
 ### Drawback/Challenge
 
 ### Future Study
+
+### Reference
+
