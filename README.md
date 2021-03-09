@@ -285,7 +285,8 @@ The optimal outcome is to approximate a parameter vector ![img](https://latex.co
 
 
 
-##### GANs Model
+##### Overview of GAN
+GAN refers to Generative Adversarial Networks, which has two sets of networks: the generator and the discriminator. It has been proven to be effective at generating 
 
 ### **Results and Evaluation**
 
