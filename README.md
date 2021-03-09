@@ -305,7 +305,39 @@ GAN has been proven to be effective at generating fake images and image style tr
 ![img](https://latex.codecogs.com/png.latex?%5Cinline%20%5Csigma_%7Bt&plus;1%7D%3Dg%28Z_%7Bt&plus;1%7D%2CS_t%29%2Ct%20%5Cin%20%5Cmathbb%7BN%7D_%7B0%7D)
 
 ##### Define the architecture
+```python
+class Discriminator(nn.Module):
+    def __init__(self, input_size):
+        super(Discriminator, self).__init__()
 
+        self.model = nn.Sequential(
+            nn.Linear(int(np.prod(input_size)), 512),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Linear(512, 256),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Linear(256, 1),
+            nn.Sigmoid(),
+        )
+
+class Generator(nn.Module):
+    def __init__(self, input_size):
+        super().__init__()
+        def block(in_feat, out_feat, normalize=True):
+            layers = [nn.Linear(in_feat, out_feat)]
+            if normalize:
+                normlayer = nn.BatchNorm1d(out_feat, 0.8)
+                layers.append(normlayer)
+            layers.append(nn.LeakyReLU(0.2, inplace=True))
+            return layers
+        self.model = nn.Sequential(
+            *block(input_size, 128, normalize=False),
+            *block(128, 256),
+            *block(256, 512),
+            *block(512, 1024),
+            nn.Linear(1024, int(np.prod(input_size))),
+            nn.Tanh()
+        )
+```
 
 
 ### **Results and Evaluation**
