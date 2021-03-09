@@ -339,8 +339,9 @@ Discriminator(
 ```
 
 ##### Normalize the Data
-As for training purpose, we want to normalize the data before fitting to the model. Specific reason can be found here: https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network.
+As for training purpose, we want to normalize the data before fitting to the model. Specific reason can be found here: https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network. However, our data is not normaly distributed, which can be seen from the histogram below, and thus we use Z-score normalization.
 
+![img](https://drive.google.com/drive/u/1/folders/1W7Qc-gFyaVGXH5w3vCjrXUPnG_2saNl6)
 
 ### **Results and Evaluation**
 
