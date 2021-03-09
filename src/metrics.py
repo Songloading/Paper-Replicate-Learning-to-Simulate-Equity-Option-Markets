@@ -42,7 +42,10 @@ for f in r:
     rs_arry[i,:,:] = np.loadtxt(open(f, "rb"), delimiter=",")
     i = i+1
 rs_arry = rs_arry.reshape(filelength*3*8)
-
+plt.hist(rs_arry,  alpha=0.5, label='simulated')
+plt.hist(dt_arry,  alpha=0.5, label='real')
+plt.legend(loc='upper right')
+plt.show()
 
 # calculate difference in cumulative epdf
 i = 0
@@ -58,18 +61,18 @@ print('cumulative ecdf: ' + str(c))
 
 skewR = skew(dt_arry)
 skewF = skew(rs_arry)
-print('skew diff: ' + str((skewR-skewF)/90))
+print('skew diff: ' + str(abs(skewR-skewF)/90))
 
 kurR = kurtosis(dt_arry)
 kurF = kurtosis(rs_arry)
-print('kurtosis diff: ' + str((kurR-kurF)/filelength))
+print('kurtosis diff: ' + str(abs(kurR-kurF)/filelength))
 
-rs_arry = rs_arry.reshape((filelength,3,8))
-dt_arry = dt_arry.reshape((filelength, 3, 8))
+# rs_arry = rs_arry.reshape((filelength,3,8))
+# dt_arry = dt_arry.reshape((filelength, 3, 8))
 
-min_eu = 100
-for i in range(filelength):
-    no = euclidean_distance(rs_arry[i,:,:], dt_arry[i,:,:])
-    if no< min_eu:
-        min_eu = no
-print('min corrrelation: ' + str(min_eu))
+# min_eu = 100
+# for i in range(filelength):
+#     no = euclidean_distance(rs_arry[i,:,:], dt_arry[i,:,:])
+#     if no< min_eu:
+#         min_eu = no
+# print('min corrrelation: ' + str(min_eu))
