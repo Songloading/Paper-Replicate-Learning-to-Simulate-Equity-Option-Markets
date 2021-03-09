@@ -378,8 +378,21 @@ This will test the model starting with DLV of Jan 1st, 2020 and you should expec
 
 ### **Evaluation**
 The performance of the model is evaluated by three metrics: CEPDF (Cumulative Empirical Probability Density Function), Skew, and Kurtosis.
--CEPDF:
-	Since we want our simulated results to match the real data, the Empirical Probability Density Function can be used for examing the distributional properties. Due to the 	random extreme values in the real dataset, we bining the time series data such that each bin contains only 5 DLVs. Formally, let 
+- CEPDF:
+   Since we want our simulated results to match the real data, the Empirical Probability Density Function can be used for examing the distributional properties. Due to the 	random extreme values in the real dataset, we bining the time series data such that each bin contains only 5 DLVs. Then calculate the EPDF for both simulated and real 	 bins. The result is calculated by suming the differences between each bin.
+	
+- Skew:
+  Skew is a measure of the asymmetry of the probability distribution. By examine the skew, we could see the difference of assymetry between the simulated and the real distributions.
+  
+- Kurtosis:
+  Kurtosis is a measure of the flatness of the probability distribution. By examine the kurtosis, we could see the difference of flatness between the simulated and the real distributions.
+  
+- Evaluate:
+```shellscript
+#!./src
+python ./metrics.py
+```
+Please ensure that the number of files in **result** folder is greater than 10 and also please include only the csv files you want to test in the **result** folder.
 ### Existing Problem
 
 
