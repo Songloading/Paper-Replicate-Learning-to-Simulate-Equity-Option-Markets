@@ -7,7 +7,7 @@ This paper is divided into seven parts; they are:
 - Description fo the Problem
 - Shortcoming of the Eisting Methods
 - Exploratory Data Analysis
-- Overview of GAN
+- GAN
 - Train and Test Model
 - Results and Evaluation
 - Drawback and Challenge
