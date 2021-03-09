@@ -9,9 +9,8 @@ This paper is divided into seven parts; they are:
 - Exploratory Data Analysis
 - GAN
 - Train and Test Model
-- Results and Evaluation
-- Drawback and Challenge
-- Future Study
+- Evaluation
+- Existing Problem
 
 ### **Description of the Problem**
 
@@ -377,11 +376,11 @@ python ./Project.py --mode=Test --dlv_path='data/spxw_call_dlv_0.csv' --recursiv
 This will test the model starting with DLV of Jan 1st, 2020 and you should expect there are 10 results generated, which represent the simulated DLVs from Jan 2nd, 2020 to Jan 11th, 2020.
 
 
-### **Results and Evaluation**
+### **Evaluation**
 The performance of the model is evaluated by three metrics: CEPDF (Cumulative Empirical Probability Density Function), Skew, and Kurtosis.
-### Drawback/Challenge
-
-### Future Study
+-CEPDF:
+	Since we want our simulated results to match the real data, the Empirical Probability Density Function can be used for examing the distributional properties. Due to the 	random extreme values in the real dataset, we bining the time series data such that each bin contains only 5 DLVs. Formally, let 
+### Existing Problem
 
 
 
