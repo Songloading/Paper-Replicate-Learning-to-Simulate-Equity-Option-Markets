@@ -383,10 +383,13 @@ The performance of the model is evaluated by three metrics: CEPDF (Cumulative Em
    Let ![img](https://latex.codecogs.com/gif.latex?%5Cbeta%20_%7Bh%7D%20%3D%20%5B%7B%5Cbeta%20_%7B1%7D%2C...%5Cbeta%20_%7BK%7D%7D%5D) be the bins
    Thus we can find the empirical probability density function for each bin:
    ![img](https://latex.codecogs.com/gif.latex?%5Ctilde%7Bf_%7Bh%7D%7D%3A%5Cbeta%20_%7Bh%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D_%7B%5Cgeq%200%7D)
+   
    ![img](https://latex.codecogs.com/gif.latex?%5Ctilde%7Bf_%7Bg%7D%7D%3A%5Cbeta%20_%7Bh%7D%20%5Crightarrow%20%5Cmathbb%7BR%7D_%7B%5Cgeq%200%7D)
    
-   Then we can calculate the cumulative difference:
+   where ![img](https://latex.codecogs.com/gif.latex?%5Ctilde%7Bf_%7Bh%7D%7D) and ![img](https://latex.codecogs.com/gif.latex?%5Ctilde%7Bf_%7Bg%7D%7D) refer to the epdf for real  and simulated bins
    
+   Then we can calculate the cumulative difference:
+   ![img](https://latex.codecogs.com/gif.latex?%5Csum_%7BB%5Cin%5Cbeta%20_%7Bh%7D%7D%5Cleft%20%7C%20%5Ctilde%7Bf%7D_%7Bh%7D%20-%20%5Ctilde%7Bf%7D_%7Bg%7D%20%5Cright%20%7C)
 	
 - Skew & Kurtosis:
   Skew and Kurtosis are measurements of the asymmetry and the flatness of the probability distribution. In financial applications higher order moments such as the skewness and kurtosis are of interest as they determine the propensity to generate extremal values.
