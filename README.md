@@ -35,6 +35,13 @@ As we notices, none of them focusing on the realistic. Although GANs could gener
 
 We are using the option data from SpiderRock. And we are generating option data of SPX weekly calls from January, February, March, June, and July 2020.
 
+Please using the below to unpack the zip files into txt file.
+
+```shellscript
+#!./src
+python ./unzip.py
+```
+
 ##### Data
 
 According to the dummy data, it contains 88 fields , including every option print along with quote, surface, and so on at print time. Below is the head of the dataset.
@@ -235,6 +242,20 @@ And here is a head of our example DLV.
 
 In order to dive more into this how does the DLV come from, please read through [Discrete Local Volatility for Large Time Steps (Short Version)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2783409), [Arbitrage-free market models for option prices](http://www.nccr-finrisk.uzh.ch/media/pdf/wp/WP428_D1.pdf).
 
+All of the above loading data, preprocessing data and computing DLV could be done by running the below script:
+
+```shellscript
+#!./src
+python ./dlv.py
+```
+
+And finally export all the DLV csv file.
+
+```shellscript
+#!./src
+python ./export.py
+```
+
 ### **GANs Model**
 
 ##### Problem Formulation
@@ -412,5 +433,19 @@ python ./metrics.py
 Note: Please ensure that the number of files in **result** folder is greater than 10 and also please include only the csv files you want to test in the **result** folder.
 ### Existing Problem
 
+- Lack of data
 
+  Right now we are using the data from five months from 2020, which is definitely not enough to run a deep learning model, compare to the original paper that using nine years' data. 
+
+  We find that we could acquire more data from the [Wikitter](https://www.wikitter.com/). Hence lacking of data should not be a huge deal in the furture study.
+
+- 2020 stock market crash
+
+  2020 is not a good year in terms of the stock market. As we all know, the global stock market crash began on 20 February 2020 and ended on 7 April. And we are using February and March data for training which will cause bias.
+
+  We think that maybe GANs is not robust enough to handle such case.  There will be a lot of room for us to develop a more powerful model.
+
+- Computing DLV issues
+
+  As we showed above, computing DLV requires a lot of work and financial mathematical knowledge. If it is possible, we should get in touch with JP Morgan computer scientist in order to ensure we are calculating it in the correct way.
 
