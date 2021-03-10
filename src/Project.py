@@ -104,7 +104,7 @@ if opt.mode == 'Train':
 
 
     # Find all file names
-    s = find('*.csv', 'data/')
+    s = find('*.csv', 'data/csv/')
 
     # load & normalize data
     dt_arry = np.zeros((len(s), 3, 8))
