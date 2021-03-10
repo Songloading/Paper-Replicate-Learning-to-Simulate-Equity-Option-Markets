@@ -12,7 +12,7 @@ def find(pattern, path):
             if fnmatch.fnmatch(name, pattern):
                 result.append(os.path.join(root, name))
     return result
-s = find('*.csv','data/')
+s = find('*.csv','data/csv/')
 r = find('*.csv','result/')
 
 def compare_epdf(a, b):
