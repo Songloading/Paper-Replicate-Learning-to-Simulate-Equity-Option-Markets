@@ -1,7 +1,7 @@
 # Deep Hedging: Learning to Simulate Equity Option Markets
 
 Welcome to our paper replicate project- [Deep Hedging: Learning to Simulate Equity Option Markets](https://arxiv.org/pdf/1911.01700.pdf) by Song Luo and Yunshu Zhang. 
-
+### **Note:** If you have trouble reading any images below, please refresh the page.
 This paper is divided into seven parts; they are:
 
 - Description fo the Problem
