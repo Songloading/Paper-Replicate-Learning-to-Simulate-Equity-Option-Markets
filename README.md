@@ -35,7 +35,7 @@ As we notices, none of them focusing on the realistic. Although GANs could gener
 
 We are using the option data from SpiderRock. And we are generating option data of SPX weekly calls from January, February, March, June, and July 2020.
 
-Please using the below to unpack the zip files into txt file.
+Note: The data is not provided here, if needed, please contact (@Songloading and @jyszhang2020). After put the data into the data/zip folder, then using the below to unpack the zip files into txt file.
 
 ```shellscript
 #!./src
@@ -433,6 +433,10 @@ python ./metrics.py
 Note: Please ensure that the number of files in **result** folder is greater than 10 and also please include only the csv files you want to test in the **result** folder.
 ### Existing Problem
 
+- Hardware issue
+
+  Since all of the option data file are pretty large it is hard to loading them or mauniplate them at the same time. It is better to have a virtual machine to handle it or Google Colab.
+
 - Lack of data
 
   Right now we are using the data from five months from 2020, which is definitely not enough to run a deep learning model, compare to the original paper that using nine years' data. 
@@ -445,7 +449,7 @@ Note: Please ensure that the number of files in **result** folder is greater tha
 
   We think that maybe GANs is not robust enough to handle such case.  There will be a lot of room for us to develop a more powerful model.
 
-- Computing DLV issues
+- Computing DLV issue
 
   As we showed above, computing DLV requires a lot of work and financial mathematical knowledge. If it is possible, we should get in touch with JP Morgan computer scientist in order to ensure we are calculating it in the correct way.
 
